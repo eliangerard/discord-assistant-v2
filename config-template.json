@@ -1,0 +1,9 @@
+{
+    "clientId" : "BOT_CLIENT_ID",
+    "token": "BOT_TOKEN",
+    "client_key": "./keys/client_secret_XXXXXXXXXXXX.apps.googleusercontent.com.json",
+    "wake_up_phrases": "ok google-okay google-google",
+    "lang" : "es-MX",
+    "lat" : 0,
+    "long" : 0
+}

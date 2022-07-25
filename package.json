@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/voice": "^0.11.0",
+    "discord-speech-recognition": "github:eliangerard/discord-speech-recognition",
+    "discord.js": "^14.0.3",
+    "ffmpeg-static": "^5.0.2",
+    "google-assistant": "^0.7.0",
+    "libsodium": "^0.7.10",
+    "sodium": "^3.0.2",
+    "wav": "^1.0.2"
+  },
+  "name": "discord-assistant-v2",
+  "version": "1.0.0",
+  "description": "A Google Assistant instance for use at Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "load": "node deploy-commands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliangerard/discord-assistant-v2.git"
+  },
+  "keywords": [
+    "Google",
+    "Assistant",
+    "Discord",
+    "Bot"
+  ],
+  "author": "Elian Gerard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliangerard/discord-assistant-v2/issues"
+  },
+  "homepage": "https://github.com/eliangerard/discord-assistant-v2#readme"
+}
