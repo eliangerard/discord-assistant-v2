@@ -23,5 +23,5 @@ Run this command to start the bot
 
 **You can keep your bot running with the help of [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/).**
 
-# First run
+## First run
 Follow these small steps in [English]() or [Spanish]() to authenticate your bot and start using it.
