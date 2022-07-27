@@ -6,10 +6,33 @@ module.exports = {
 	name: 'speech',
 	once: false,
 	execute(msg, client) {
-		console.log(msg.content);
-        console.log(client.assistantManager);
         if (!msg.content) return;
-        if(!client.assistantManager.waitingForQuery){
+        const user = msg.author.username + msg.author.discriminator;
+        client.msg = msg;
+
+        if(client.assistantManager.waitingForQuery && client.assistantManager.waitingForUser == user){
+            const query = msg.content;
+            return client.executeQuery(query);
+        }
+        if(client.assistantManager.waitingForQuery && client.assistantManager.waitingForUser != user) return;        
+
+        const wakeUp = client.config.wake_up_phrases.split('-');
+        if(!wakeUp.includes(msg.content.toLowerCase())) 
+            return;
+        
+        client.assistantManager.waitingForUser = user;
+        client.assistantManager.waitingForQuery = true;
+        const connection = getVoiceConnection(msg.channel.guildId);
+        const player = createAudioPlayer();
+        
+        const resListening = createAudioResource(createReadStream(join('./resources/', 'listening.ogg'), {
+            inputType: StreamType.OggOpus,
+        }));
+
+        connection.subscribe(player);
+        player.play(resListening);
+
+        /*if(!client.assistantManager.waitingForQuery){
             const wakeUp = client.config.wake_up_phrases.split('-');
             if(!wakeUp.includes(msg.content.toLowerCase()) && !client.waitingForQuery) return;
             
@@ -29,9 +52,9 @@ module.exports = {
             return client.assistantManager.waitingForQuery = true;
         }
         
-        connection.subscribe(player);
-        player.play(resListening);
+        
         client.msg = msg;
         client.assistantManager.waitingForQuery = true;
+        */
 	},
 };

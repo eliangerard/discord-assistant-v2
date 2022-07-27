@@ -7,8 +7,6 @@ module.exports = {
         .addStringOption(option => option.setName('query').setDescription('What you want to consult').setRequired(true)),
 	async execute(interaction, client) {
 		const user = interaction.user.username + interaction.user.discriminator;
-		console.log(user +" "+client.assistantManager.waitingForUser);
-		console.log(client.assistantManager.waitingForQuery +" "+ (client.assistantManager.waitingForUser != user));
 		if(client.assistantManager.waitingForQuery && client.assistantManager.waitingForUser != user)
 		return interaction.reply({ content: 'Estoy esperando la respuesta de alguién más :)', ephemeral: true});
 		
