@@ -6,7 +6,7 @@ module.exports = {
 	name: 'speech',
 	once: false,
 	execute(msg, client) {
-        if (!msg.content) return;
+        if (!msg.content || client.assistantManager.textMode) return;
         const user = msg.author.username + msg.author.discriminator;
         client.msg = msg;
 
