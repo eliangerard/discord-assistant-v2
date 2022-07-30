@@ -1,5 +1,5 @@
 # discord-assistant-v2
-Discord Assistant is a bot for discord servers that offers the possibility to use Google Assistant either through text channels or voice channels, developed in discord.js v14 and @discord/voice v0.11.0 uses the most updated packages.
+Discord Assistant is a bot for discord servers that offers the possibility to use Google Assistant either through text channels or voice channels, developed in discord.js v14 uses the most updated packages.
 
 ## Slash Commands
 - join: Join bot to the voice channel you are on
