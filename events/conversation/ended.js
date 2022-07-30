@@ -6,11 +6,13 @@ module.exports = {
 	name: 'ended',
 	execute(error, continueConversation, client) {
 		if(error) throw new Error(error);
+		
+		if(client.assistantManager.textMode){
+			client.assistantManager.waitingForTextQuery = continueConversation;
+			return client.assistantManager.textMode = false;
+		}
+		
 		client.assistantManager.waitingForQuery = continueConversation;
-
-		if(client.assistantManager.textMode)
-			return client.assistantManager.textMode = continueConversation;
-
 		client.assistantManager.outputFileStream.end();
 		client.assistantManager.startRecording = true;
 		

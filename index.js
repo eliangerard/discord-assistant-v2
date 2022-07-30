@@ -11,7 +11,9 @@ client.interaction = null;
 client.assistantManager = {
     textMode : false,
     waitingForQuery : false,
+    waitingForTextQuery : false,
     waitingForUser : null,
+    waitingForTextUser : null,
     startRecording : true,
     outputFileStream : null
 };
