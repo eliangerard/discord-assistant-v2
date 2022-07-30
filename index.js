@@ -12,7 +12,6 @@ client.assistantManager = {
     textMode : false,
     waitingForQuery : false,
     waitingForUser : null,
-    continueConversation : false,
     startRecording : true,
     outputFileStream : null
 };
