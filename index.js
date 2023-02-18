@@ -24,7 +24,7 @@ client.config.assistant = {
       savedTokensPath: path.resolve(__dirname, './keys/tokens.json'),
     },
     conversation: {
-        lang: client.config.language,
+        lang: client.config.lang,
         deviceLocation: {
             coordinates: {
                 latitude: client.config.latitude,
@@ -34,7 +34,7 @@ client.config.assistant = {
     }
 };
 
-addSpeechEvent(client, { lang: client.config.language });
+addSpeechEvent(client, { lang: client.config.lang });
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
